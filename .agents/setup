@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Orb setup: runs once per fresh orb (and on stale snapshots); must stay idempotent.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+step() { echo "==> $1"; SECONDS=0; }
+done_step() { echo "    done in ${SECONDS}s"; }
+
+step "node $(node -v), pnpm $(pnpm -v)"
+node -e 'const [M,m]=process.versions.node.split(".").map(Number); if (M<22||(M===22&&m<12)) { console.error("Node >=22.12 required"); process.exit(1) }'
+done_step
+
+step "pnpm install"
+CI=true pnpm install --frozen-lockfile
+done_step
