@@ -1,0 +1,22 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"useTabs": true,
+	"singleQuote": true,
+	"trailingComma": "none",
+	"printWidth": 100,
+	"sortPackageJson": false,
+	"sortTailwindcss": {
+		"stylesheet": "./src/App.css"
+	},
+	"ignorePatterns": [
+		".agents/",
+		"pnpm-lock.yaml",
+		"dist/",
+		"node_modules/",
+		"*.log",
+		".env",
+		".env.*",
+		".DS_Store",
+		".idea/"
+	]
+}
