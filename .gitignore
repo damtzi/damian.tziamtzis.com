@@ -28,3 +28,6 @@ vite.config.ts.timestamp-*
 
 # amp
 .amp/portals/*
+
+# wrangler
+.wrangler/

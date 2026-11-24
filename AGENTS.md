@@ -2,7 +2,7 @@
 
 ## Project
 
-Interactive 3D contact card for tziamtzis.com. Vite + Solid 2 SPA, Tailwind v4, plain Three.js
+Interactive 3D contact card for damian.tziamtzis.com. Vite + Solid 2 SPA, Tailwind v4, plain Three.js
 (scene in `src/card-3d.tsx`), static build to `dist/client`. Node 24+, pnpm (pinned via
 `packageManager`).
 
