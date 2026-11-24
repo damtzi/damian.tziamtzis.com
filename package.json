@@ -40,6 +40,8 @@
 	},
 	"dependencies": {
 		"@solidjs/web": "^2.0.0",
+		"@ui-sdk/core": "0.1.0-beta.16",
+		"@ui-sdk/solid": "0.1.0-beta.16",
 		"solid-js": "^2.0.0",
 		"three": "^0.187.0"
 	},

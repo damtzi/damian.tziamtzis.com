@@ -4,6 +4,9 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
 	plugins: [solid({ start: true, diagnostics: true }), tailwindcss()],
+	optimizeDeps: {
+		exclude: ['@ui-sdk/core']
+	},
 	resolve: {
 		tsconfigPaths: true
 	},

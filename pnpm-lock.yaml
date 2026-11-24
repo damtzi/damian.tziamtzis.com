@@ -112,6 +112,12 @@ importers:
       '@solidjs/web':
         specifier: ^2.0.0
         version: 2.0.0(solid-js@2.0.0)
+      '@ui-sdk/core':
+        specifier: 0.1.0-beta.16
+        version: 0.1.0-beta.16
+      '@ui-sdk/solid':
+        specifier: 0.1.0-beta.16
+        version: 0.1.0-beta.16(@solidjs/web@2.0.0(solid-js@2.0.0))(@ui-sdk/core@0.1.0-beta.16)(solid-js@2.0.0)
       solid-js:
         specifier: ^2.0.0
         version: 2.0.0
@@ -1370,6 +1376,16 @@ packages:
     engines: {node: '>=16.20.0'}
     cpu: [x64]
     os: [win32]
+
+  '@ui-sdk/core@0.1.0-beta.16':
+    resolution: {integrity: sha512-I2GMqOviLS/lYfIj2lTqKLbae0V9uSnysK+bSdbhuw2De8zNvrLZiDTc0qzsPNiZvB/bMmUZJS5UDA5Q2Pq4Ng==}
+
+  '@ui-sdk/solid@0.1.0-beta.16':
+    resolution: {integrity: sha512-EIl/XMTVbG796Yf+b6Lgdhf/Xt1XTeVO38GJ1p0Xx/90K93s8duiEFjjQ7vSODg2N/+E/V4YyK1MJmN2kg3gIA==}
+    peerDependencies:
+      '@solidjs/web': ^2.0.0
+      '@ui-sdk/core': ^0.1.0-beta.16
+      solid-js: ^2.0.0
 
   abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -2948,6 +2964,14 @@ snapshots:
 
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
+
+  '@ui-sdk/core@0.1.0-beta.16': {}
+
+  '@ui-sdk/solid@0.1.0-beta.16(@solidjs/web@2.0.0(solid-js@2.0.0))(@ui-sdk/core@0.1.0-beta.16)(solid-js@2.0.0)':
+    dependencies:
+      '@solidjs/web': 2.0.0(solid-js@2.0.0)
+      '@ui-sdk/core': 0.1.0-beta.16
+      solid-js: 2.0.0
 
   abort-controller@3.0.0:
     dependencies:

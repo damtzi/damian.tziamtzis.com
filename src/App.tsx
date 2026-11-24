@@ -8,14 +8,14 @@ export default function App() {
 			<div class="min-h-0 flex-1">
 				<Card3D />
 			</div>
-			<nav class="flex justify-center gap-6 pb-10 text-sm text-neutral-400">
-				<a class="hover:text-white" href={`mailto:${contact.email}`}>
+			<nav class="flex justify-center gap-6 pb-10 text-sm">
+				<a class="text-neutral-400 hover:text-white" href={`mailto:${contact.email}`}>
 					Email
 				</a>
-				<a class="hover:text-white" href={contact.website}>
+				<a class="text-neutral-400 hover:text-white" href={contact.website}>
 					Website
 				</a>
-				<a class="hover:text-white" href={contact.cv}>
+				<a class="text-neutral-400 hover:text-white" href={contact.cv}>
 					CV
 				</a>
 			</nav>

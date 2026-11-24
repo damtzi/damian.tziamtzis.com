@@ -4,7 +4,7 @@ import { HydrationScript } from '@solidjs/web';
 // Document shell (replaces index.html); prerendered, ships no client JS.
 export default function Document(props: ParentProps) {
 	return (
-		<html lang="en">
+		<html lang="en" class="scheme-dark">
 			<head>
 				<meta charset="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
