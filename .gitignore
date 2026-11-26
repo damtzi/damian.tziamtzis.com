@@ -1,5 +1,5 @@
 # output
-dist/
+.wrangler/
 
 # dependencies
 node_modules/
@@ -21,10 +21,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
-
-# vite
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
 
 # amp
 .amp/portals/*

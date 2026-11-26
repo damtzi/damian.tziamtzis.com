@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Damian Tziamtzis</title>
+		<meta name="description" content="Damian Tziamtzis — contact card" />
+		<meta name="theme-color" content="#fcfcfc" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)" />
+		<meta property="og:title" content="Damian Tziamtzis" />
+		<meta property="og:description" content="Contact card" />
+		<meta property="og:url" content="https://damian.tziamtzis.com" />
+		<style>
+			/* Radix gray scale, as used by jakub.kr. Follows the system theme; no switcher. */
+			:root {
+				color-scheme: light dark;
+				--background: #fcfcfc;
+				--foreground: #202020;
+				--muted: #6f6f6f;
+				--underline: #a0a0a0;
+			}
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--background: #101010;
+					--foreground: #eeeeee;
+					--muted: #b5b5b5;
+					--underline: #6e6e6e;
+				}
+			}
+			body {
+				margin: 0;
+				background: var(--background);
+				color: var(--foreground);
+				font:
+					16px/1.5 Arial,
+					Helvetica,
+					sans-serif;
+				-webkit-font-smoothing: antialiased;
+			}
+			main {
+				max-width: 36rem;
+				margin: 0 auto;
+				padding: 6rem 1.5rem;
+			}
+			h1 {
+				margin: 0;
+				font-size: 1rem;
+			}
+			ul {
+				margin: 1rem 0 0;
+				padding-left: 2ch;
+				list-style-type: '- ';
+				color: var(--muted);
+			}
+			a {
+				color: var(--foreground);
+				text-decoration-color: var(--underline);
+				text-underline-offset: 0.1875rem;
+			}
+			a:hover {
+				text-decoration-color: currentColor;
+			}
+			@media (min-width: 640px) {
+				main {
+					padding-block: 8rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<h1>Damian Tziamtzis</h1>
+			<ul>
+				<li>email: <a href="mailto:damian@tziamtzis.com">damian@tziamtzis.com</a></li>
+				<li>website: <a href="https://damitzi.com">damitzi.com</a></li>
+				<li>github: <a href="https://github.com/damtzi">damtzi</a></li>
+			</ul>
+		</main>
+	</body>
+</html>

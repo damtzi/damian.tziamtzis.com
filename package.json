@@ -8,43 +8,24 @@
 		"node": ">=24"
 	},
 	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite preview",
-		"deploy": "pnpm build && wrangler deploy --message \"$(git log -1 --pretty=%s)\"",
-		"typecheck": "tsc",
+		"dev": "wrangler dev",
+		"deploy": "wrangler deploy --message \"$(git log -1 --pretty=%s)\"",
 		"format": "oxfmt",
 		"format:check": "oxfmt --check",
 		"prepare": "husky",
-		"lint": "oxlint && pnpm typecheck && pnpm format:check",
-		"lint:fix": "oxlint --fix",
+		"lint": "pnpm format:check",
 		"lint-staged": "lint-staged"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^21.2.4",
 		"@commitlint/config-conventional": "^21.2.4",
 		"@commitlint/types": "^21.2.3",
-		"@solidjs/diagnostics": "^2.0.0",
-		"@solidjs/vite-plugin": "^3.0.0",
-		"@tailwindcss/vite": "^4.3.5",
-		"eslint-plugin-solid": "~0.20.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^17.6.1",
 		"oxfmt": "^0.79.0",
-		"oxlint": "~1.92.0",
-		"tailwindcss": "^4.3.5",
-		"typescript": "^7.0.2",
-		"vite": "^8.3.8",
 		"wrangler": "^4.166.0"
 	},
-	"dependencies": {
-		"@solidjs/web": "^2.0.0",
-		"@ui-sdk/core": "0.1.0-beta.16",
-		"@ui-sdk/solid": "0.1.0-beta.16",
-		"solid-js": "^2.0.0"
-	},
 	"lint-staged": {
-		"*.{js,jsx,ts,tsx}": "oxlint --fix",
-		"*.{js,jsx,ts,tsx,json,jsonc,css,md,yml,yaml}": "oxfmt --no-error-on-unmatched-pattern"
+		"*.{html,ts,json,jsonc,md,yml,yaml}": "oxfmt --no-error-on-unmatched-pattern"
 	}
 }

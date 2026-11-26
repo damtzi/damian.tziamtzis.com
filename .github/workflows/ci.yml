@@ -27,48 +27,17 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
 
-      - name: Check for lint, type and formatting errors
+      - name: Check formatting
         run: pnpm lint
-
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    needs: lint
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4.1.0
-
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm i --frozen-lockfile
-
-      - name: Build site
-        run: pnpm build
 
       - name: Validate Worker config
         run: pnpm wrangler deploy --dry-run --outdir .wrangler/dry-run
-
-      - name: Upload build
-        uses: actions/upload-artifact@v4
-        with:
-          name: site-build
-          path: dist/client
-          include-hidden-files: true
 
   preview:
     name: Preview
     if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
-    needs: build
+    needs: lint
     permissions:
       contents: read
       pull-requests: write
@@ -88,12 +57,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
-
-      - name: Download build
-        uses: actions/download-artifact@v4
-        with:
-          name: site-build
-          path: dist/client
 
       - name: Upload preview version
         id: preview
@@ -137,7 +100,7 @@ jobs:
     name: Deploy
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
-    needs: build
+    needs: lint
     environment:
       name: production
       url: https://damian.tziamtzis.com
@@ -157,12 +120,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
-
-      - name: Download build
-        uses: actions/download-artifact@v4
-        with:
-          name: site-build
-          path: dist/client
 
       - name: Deploy Worker
         env:

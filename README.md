@@ -1,12 +1,11 @@
 # damian.tziamtzis.com
 
-Minimal contact card. Vite + Solid 2 + Tailwind v4, static build.
+Minimal contact card: one static `public/index.html`, no build step. Deployed to Cloudflare Workers.
 
 ```bash
 pnpm install
-pnpm dev        # http://localhost:3000
-pnpm build      # static site in dist/client
-pnpm lint       # oxlint + tsc + oxfmt check
+pnpm dev        # wrangler dev, http://localhost:8787
+pnpm lint       # oxfmt check
 ```
 
-Contact details live in `src/contact.ts`; the page in `src/App.tsx`. See `AGENTS.md` for conventions.
+See `AGENTS.md` for conventions.
