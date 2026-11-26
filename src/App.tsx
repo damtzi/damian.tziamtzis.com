@@ -1,24 +1,21 @@
-import Card3D from '@/card-3d';
 import { contact } from '@/contact';
 import './App.css';
 
 export default function App() {
 	return (
-		<main class="flex h-dvh flex-col">
-			<div class="min-h-0 flex-1">
-				<Card3D />
-			</div>
-			<nav class="flex justify-center gap-6 pb-10 text-sm">
-				<a class="text-neutral-400 hover:text-white" href={`mailto:${contact.email}`}>
-					Email
-				</a>
-				<a class="text-neutral-400 hover:text-white" href={contact.website}>
-					Website
-				</a>
-				<a class="text-neutral-400 hover:text-white" href={contact.cv}>
-					CV
-				</a>
-			</nav>
+		<main class="mx-auto max-w-xl px-6 py-24 sm:py-32">
+			<h1 class="font-bold">{contact.name}</h1>
+			<ul class="mt-4 list-['-_'] pl-[2ch] text-muted">
+				<li>
+					email: <a href={`mailto:${contact.email}`}>{contact.email}</a>
+				</li>
+				<li>
+					website: <a href={`https://${contact.website}`}>{contact.website}</a>
+				</li>
+				<li>
+					github: <a href={`https://github.com/${contact.github}`}>{contact.github}</a>
+				</li>
+			</ul>
 		</main>
 	);
 }

@@ -1,3 +1,26 @@
 @layer ui-sdk;
 @import 'tailwindcss';
 @import '@ui-sdk/core/web.css' layer(components);
+
+/* Radix gray scale, as used by jakub.kr. Follows the system theme; no switcher. */
+@theme {
+	--font-sans: Arial, Helvetica, sans-serif;
+	--color-background: #fcfcfc;
+	--color-foreground: #202020;
+	--color-muted: #6f6f6f;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-background: #101010;
+		--color-foreground: #eeeeee;
+		--color-muted: #b5b5b5;
+	}
+}
+
+:root {
+	color-scheme: light dark;
+	/* ui-sdk styles links with its own foreground; point it at ours. */
+	--ui-foreground: var(--color-foreground);
+	--ui-background: var(--color-background);
+}
